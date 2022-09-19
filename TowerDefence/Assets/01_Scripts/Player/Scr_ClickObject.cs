@@ -20,7 +20,9 @@ public class Scr_ClickObject : MonoBehaviour
         {
             if(hit.transform != null)
             {
-                Debug.Log(hit.transform.name);
+                
+                BuildTower tmp =  hit.collider.gameObject.GetComponent<BuildTower>();
+                tmp?.Build();
             }
         }
     }
