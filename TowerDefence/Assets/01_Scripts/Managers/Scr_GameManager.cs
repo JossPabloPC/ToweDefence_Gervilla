@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Scr_GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameData _gameData;
     void Start()
     {
-        Cursor.visible = true; 
+        Cursor.visible = true;
+        setGameData();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void setGameData()
     {
-        
+        _gameData._credit = 0;
+        _gameData._TowerSelected = null;
     }
 }

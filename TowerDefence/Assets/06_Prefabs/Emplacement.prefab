@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6782691258774856211}
   - component: {fileID: 6782691258774856210}
   - component: {fileID: 6782691258774856214}
+  - component: {fileID: 4459899677177964683}
   m_Layer: 0
   m_Name: Emplacement
   m_TagString: Untagged
@@ -110,6 +111,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608d3d916df78f34fbdbca19867aa65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tower: {fileID: 4902708299852037205, guid: 9845f77fb4c9ecb4785ff8d69e77781f, type: 3}
+  _gameData: {fileID: 11400000, guid: 80885aa2e2ab882488617f2b9ced13ee, type: 2}
+--- !u!114 &4459899677177964683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782691258774856205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013bda84682a5b04cb708c44b2b65b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _onMouseHover:
     m_PersistentCalls:
       m_Calls:
@@ -140,4 +155,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _tower: {fileID: 4902708299852037205, guid: 9845f77fb4c9ecb4785ff8d69e77781f, type: 3}

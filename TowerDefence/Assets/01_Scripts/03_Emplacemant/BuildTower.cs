@@ -5,13 +5,10 @@ using UnityEngine.Events;
 
 public class BuildTower : MonoBehaviour
 {
-    public UnityEvent _onMouseHover;
-    public UnityEvent _onMouseExit;
+    [SerializeField]private GameData    _gameData;
 
-
-    [SerializeField]private GameObject _tower;
-    
-    private bool _towerUsed;
+    private GameObject  _tower;
+    private bool        _towerUsed;
 
     private void Start()
     {
@@ -20,20 +17,12 @@ public class BuildTower : MonoBehaviour
 
     public void Build()
     {
-        if (!_towerUsed)
+        if (!_towerUsed && _gameData._TowerSelected != null)
         {
-            _towerUsed = true;
+            _towerUsed  = true;
+            _tower      = _gameData._TowerSelected;
             Instantiate(_tower, transform.position + Vector3.up * 0.66f, Quaternion.identity);
         }
     }
 
-    private void OnMouseEnter()
-    {
-        _onMouseHover.Invoke();
-    }
-
-    private void OnMouseExit()
-    {
-        _onMouseExit.Invoke();
-    }
 }
