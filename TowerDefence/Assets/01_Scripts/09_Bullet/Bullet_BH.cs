@@ -8,6 +8,6 @@ public class Bullet_BH : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(transform.forward * _bullet_Data.speed * Time.deltaTime);
+        transform.Translate(gameObject.transform.forward * _bullet_Data.speed * Time.deltaTime, Space.World);
     }
 }

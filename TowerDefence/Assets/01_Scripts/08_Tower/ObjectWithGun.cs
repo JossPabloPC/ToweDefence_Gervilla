@@ -11,6 +11,7 @@ public class ObjectWithGun : MonoBehaviour
     protected   SphereCollider  _collider; 
     private     float           _clock;
 
+
     protected float RealRateOfFire
     {
         get { return 1/_rateOfFire; }
@@ -40,7 +41,7 @@ public class ObjectWithGun : MonoBehaviour
         if (_clock >= RealRateOfFire)
         {
             _clock = 0;
-            Instantiate(_projectile, canonEnd.localPosition, canonEnd.localRotation);
+            Instantiate(_projectile, canonEnd.position, canonEnd.rotation);
         }
     }
     protected void UpdateClockToFire()
