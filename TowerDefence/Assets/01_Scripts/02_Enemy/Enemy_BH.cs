@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_BH : MonoBehaviour, MoveToTarget_IE
+public class Enemy_BH : Damagable_Body, MoveToTarget_IE
 {
     [SerializeField] public Enemy_Data  _enemyData;
     [SerializeField] private PathPoint  _currentTarget;
 
-    
+    private void Start()
+    {
+        _currentHealth = _enemyData._health;
+    }
     private void Update()
     {
         if (_currentTarget != null)
@@ -45,4 +48,9 @@ public class Enemy_BH : MonoBehaviour, MoveToTarget_IE
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Bullet_BH tmp = other.GetComponent<Bullet_BH>();
+        tmp?.MakeDamage(this);
+    }
 }

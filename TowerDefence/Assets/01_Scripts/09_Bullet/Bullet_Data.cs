@@ -6,4 +6,5 @@ using UnityEngine;
 public class Bullet_Data : ScriptableObject
 {
     public float speed;
+    public int  damage;
 }
