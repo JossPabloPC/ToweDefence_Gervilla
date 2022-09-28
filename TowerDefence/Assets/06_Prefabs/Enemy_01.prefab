@@ -200,6 +200,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede288de33f65994d960b1432b552c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OnReceiveDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7197878175854763956}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: UpdateFillAmount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _objectData: {fileID: 11400000, guid: cca44fa91cd9eef47b206d19fcfc8583, type: 2}
   _enemyData: {fileID: 11400000, guid: cca44fa91cd9eef47b206d19fcfc8583, type: 2}
   _currentTarget: {fileID: 0}
 --- !u!54 &8385921426673926494
@@ -242,6 +258,7 @@ GameObject:
   - component: {fileID: 4201367926233794503}
   - component: {fileID: 2565124451788583206}
   - component: {fileID: 7029562085759216176}
+  - component: {fileID: 7197878175854763956}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -307,3 +324,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7197878175854763956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220458017046765451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d7e8b4ac91eed418bee8593300edf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _master: {fileID: 4489188936142032942}
