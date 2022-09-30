@@ -7,8 +7,6 @@ public class HealthBar : MonoBehaviour
 {
     private Image _healthBar;
 
-    [SerializeField]private Color _initialColor;
-    [SerializeField]private Color _finalcolor;
     [SerializeField]private Gradient _healthColors;
 
     [SerializeField]private Damagable_Body _master;
