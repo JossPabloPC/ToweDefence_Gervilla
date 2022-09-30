@@ -16,4 +16,9 @@ public class Bullet_BH : MonoBehaviour, I_MakeDamage
         damagable_Body.receiveDamage(_bullet_Data.damage);
         gameObject.SetActive(false);
     }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
 }
