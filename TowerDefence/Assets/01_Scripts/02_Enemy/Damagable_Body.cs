@@ -7,7 +7,7 @@ public class Damagable_Body : MonoBehaviour
 {
     [SerializeField] private UnityEvent _OnReceiveDamage;
 
-    protected   int         _currentHealth;
+    protected   float       _currentHealth;
     public      AliveObject _objectData;
     
     public float CurrentHealthNormalized
@@ -16,11 +16,21 @@ public class Damagable_Body : MonoBehaviour
     }
     public virtual void receiveDamage(int damage)
     {
-        _currentHealth -= damage;
-        _OnReceiveDamage.Invoke();
+        StartCoroutine(reduceHealth(damage));
         if(_currentHealth <= 0)
         {
             gameObject.SetActive(false);
         }
+    }
+
+    IEnumerator reduceHealth(int damage)
+    {
+        float objetivo = _currentHealth - damage;
+        do
+        {
+            _currentHealth -= 0.01f;
+            _OnReceiveDamage.Invoke();
+            yield return new WaitForEndOfFrame();
+        } while (_currentHealth >= objetivo);
     }
 }

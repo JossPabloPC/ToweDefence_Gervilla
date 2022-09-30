@@ -16,6 +16,6 @@ public class HealthNumber : MonoBehaviour
     }
     public void UpdateText()
     {
-        _healthText.text = _master.CurrentHealthNormalized.ToString();
+        _healthText.text = _master.CurrentHealthNormalized.ToString("#.##");
     }
 }
