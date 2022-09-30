@@ -9,7 +9,8 @@ public class HealthBar : MonoBehaviour
 
     [SerializeField]private Color _initialColor;
     [SerializeField]private Color _finalcolor;
- 
+    [SerializeField]private Gradient _healthColors;
+
     [SerializeField]private Damagable_Body _master;
 
     private void Start()
@@ -19,6 +20,6 @@ public class HealthBar : MonoBehaviour
     public void UpdateHealthBar()
     {
         _healthBar.fillAmount = _master.CurrentHealthNormalized;
-        _healthBar.color = Color.Lerp(_initialColor, _finalcolor, _master.CurrentHealthNormalized);
+        _healthBar.color = _healthColors.Evaluate(_master.CurrentHealthNormalized);
     }
 }
