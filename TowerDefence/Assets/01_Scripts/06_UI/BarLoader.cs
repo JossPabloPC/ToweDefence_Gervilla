@@ -1,26 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BarLoader : MonoBehaviour
 {
-    [SerializeField] private RectTransform  transform;
-    [SerializeField] private float          time;
+    [SerializeField] private Image  _image;
+    [SerializeField] private float  _time;
 
     private void Start()
     {
-        transform = GetComponent<RectTransform>();
+        _image = GetComponent<Image>();
     }
 
+    public void LoadBarOnClick()
+    {
+        StartCoroutine(LoadBar());
+    }
     public IEnumerator LoadBar()
     {
 
         float currtime = 0;
-        Vector3 scale = new Vector3(0, 1, 1);
-        while (currtime <= time)
+        while (currtime <= _time)
         {
             currtime += Time.deltaTime;
-            Debug.Log(currtime);
+            _image.fillAmount = currtime/_time;
             yield return new WaitForEndOfFrame();
         }
 
