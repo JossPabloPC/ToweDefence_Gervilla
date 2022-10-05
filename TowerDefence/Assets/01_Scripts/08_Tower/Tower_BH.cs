@@ -23,10 +23,10 @@ public class Tower_BH : ObjectWithGun
     }
     protected override void AssignGunStats()
     {
-        _rateOfFire = data.rateOfFire;
-        _range = data.range;
-        _projectile = data.projectile;
-        _collider.radius = _range;
+        _rateOfFire         = data.rateOfFire;
+        _range              = data.range;
+        _projectile         = data.projectile;
+        _collider.radius    = _range;
     }
 
     private void OnDrawGizmosSelected()
@@ -40,6 +40,7 @@ public class Tower_BH : ObjectWithGun
 
     private void LockOnTarget()
     {
+        CheckListStatus();
         if (_enemiesOnTarget.Count > 0)
         {
             transform.LookAt(_enemiesOnTarget[0].transform);
@@ -64,6 +65,16 @@ public class Tower_BH : ObjectWithGun
         if(_enemiesOnTarget.Contains(tmp)) //el target salio del scope
         {
             _enemiesOnTarget.Remove(tmp);
+        }
+    }
+    private void CheckListStatus()
+    {
+        for(int i = 0; i < _enemiesOnTarget.Count; i++)
+        {
+            if (!_enemiesOnTarget[i].gameObject.activeInHierarchy)
+            {
+                _enemiesOnTarget.RemoveAt(i);
+            }
         }
     }
 

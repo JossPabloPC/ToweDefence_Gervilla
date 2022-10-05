@@ -14,4 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _speed: 1
-  _health: 5

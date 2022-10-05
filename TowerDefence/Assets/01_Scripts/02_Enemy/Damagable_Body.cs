@@ -9,7 +9,8 @@ public class Damagable_Body : MonoBehaviour
 
     protected   float       _currentHealth;
     public      AliveObject _objectData;
-    
+
+
     public float CurrentHealthNormalized
     {
         get { return (float)_currentHealth/_objectData._health; }

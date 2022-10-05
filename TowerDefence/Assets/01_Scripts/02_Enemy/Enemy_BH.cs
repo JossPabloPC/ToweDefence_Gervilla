@@ -7,6 +7,7 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
     [SerializeField] public Enemy_Data  _enemyData;
     [SerializeField] private PathPoint  _currentTarget;
 
+
     private void Start()
     {
         _currentHealth = _enemyData._health;
