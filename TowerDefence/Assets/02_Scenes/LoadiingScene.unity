@@ -441,7 +441,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -466,8 +466,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69f671ec34709b41896195c99f159d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transform: {fileID: 0}
-  time: 4
+  _image: {fileID: 0}
+  _time: 3
 --- !u!1 &943791551
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +551,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 943791554}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787831527}
+        m_TargetAssemblyTypeName: BarLoader, Assembly-CSharp
+        m_MethodName: LoadBarOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &943791554
 MonoBehaviour:
   m_ObjectHideFlags: 0
