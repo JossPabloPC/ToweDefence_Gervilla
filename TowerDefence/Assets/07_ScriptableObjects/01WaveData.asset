@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3270fa0fcfe295e419a82fc46b9c9227, type: 3}
   m_Name: 01WaveData
   m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  enemies: []
+  spawnPointsTag: 
+  spawnPoints: []
+  enemies:
+  - {fileID: 11400000, guid: cca44fa91cd9eef47b206d19fcfc8583, type: 2}
   enemyBudget: 0
+  enemiesOnScene: []
+  _enemiesToSpawn: 
