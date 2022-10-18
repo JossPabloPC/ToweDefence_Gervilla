@@ -7,10 +7,17 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
     [SerializeField] public Enemy_Data  _enemyData;
     [SerializeField] private PathPoint  _currentTarget;
 
+    public PathPoint CurrentTarget
+    {
+        set { _currentTarget = value; }
+        get { return _currentTarget; }}
 
-    private void Start()
+
+    private void OnEnable()
     {
         _currentHealth = _enemyData._health;
+        WaveManager.enemiesOnScene.Add(this.gameObject);
+        
     }
     private void Update()
     {
