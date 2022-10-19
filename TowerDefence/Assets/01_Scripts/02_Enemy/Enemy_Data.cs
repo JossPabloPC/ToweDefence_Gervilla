@@ -6,4 +6,5 @@ using UnityEngine;
 public class Enemy_Data : AliveObject
 {
     public float _speed;
+    public int   _budgetCost;
 }

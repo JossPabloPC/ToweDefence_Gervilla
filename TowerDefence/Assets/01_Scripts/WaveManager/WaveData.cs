@@ -6,6 +6,9 @@ using UnityEngine;
 [SerializeField]
 public class WaveData : ScriptableObject
 {
+    private List<int>           _idxOfEnemiesOnBudget;
+    private int                 _availableBudget;
+
     public string               spawnPointsTag;
     public List <PathPoint>     spawnPoints;
     public GameObject[]         enemies;
@@ -25,10 +28,31 @@ public class WaveData : ScriptableObject
     }
     public void CalculateEnemiesToSpawn()
     {
-        enemiesToSpawn = new List<int>();
-        for (int i = 0; i < enemyBudget; i++)
+        _availableBudget = enemyBudget;
+        int randIdx;
+        while (_availableBudget > 0) {
+            SetEnemiesOnBudget();
+            
+            if(_idxOfEnemiesOnBudget.Count == 0)
+                break;
+            
+            randIdx = Random.Range(0,_idxOfEnemiesOnBudget.Count);
+            enemiesToSpawn.Add(randIdx);
+            _availableBudget -= enemies[_idxOfEnemiesOnBudget[randIdx]].GetComponent<Enemy_BH>()._enemyData._budgetCost;
+        }
+    }
+
+    private void SetEnemiesOnBudget()
+    {
+        _idxOfEnemiesOnBudget = new List<int>();
+        Enemy_Data tmpenemyData;
+        for (int i = 0; i < enemies.Length; i++)
         {
-            enemiesToSpawn.Add(Random.Range(0, enemies.Length));
+            tmpenemyData = enemies[i].GetComponent <Enemy_BH>()._enemyData;
+            if (tmpenemyData._budgetCost <= _availableBudget)
+            {
+                _idxOfEnemiesOnBudget.Add(i);
+            }
         }
     }
 }
