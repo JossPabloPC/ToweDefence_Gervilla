@@ -16,6 +16,9 @@ public class WaveData : ScriptableObject
     public List <int>           enemiesToSpawn;
 
 
+    /// <summary>
+    /// Selects a random spwan point and spawns an enemy from it.
+    /// </summary>
     public void spawnEnemy()
     {
         if (spawnPoints != null && spawnPoints.Count > 0)
@@ -26,6 +29,10 @@ public class WaveData : ScriptableObject
             enemiesToSpawn.RemoveAt(0);
         }
     }
+
+    /// <summary>
+    /// Calcualtes the enemies that will be spawned in that wave
+    /// </summary>
     public void CalculateEnemiesToSpawn()
     {
         _availableBudget = enemyBudget;
@@ -42,6 +49,9 @@ public class WaveData : ScriptableObject
         }
     }
 
+    /// <summary>
+    ///Chacks waht enemies are still able to be spawned
+    /// </summary>
     private void SetEnemiesOnBudget()
     {
         _idxOfEnemiesOnBudget = new List<int>();
