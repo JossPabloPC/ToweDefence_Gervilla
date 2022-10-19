@@ -1,4 +1,4 @@
-using System.Collections;
+  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,7 +38,7 @@ public class WaveManager : MonoBehaviour
 
 
     IEnumerator TimeNextEnemy(float time) {
-        while (true) { 
+        while (waves[_currentWave].enemiesToSpawn.Count > 0) { 
             float _currTime = 0;
             while (_currTime <= time)
             {

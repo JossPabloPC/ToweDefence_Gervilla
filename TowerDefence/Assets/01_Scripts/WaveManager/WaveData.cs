@@ -20,6 +20,7 @@ public class WaveData : ScriptableObject
             PathPoint tmp = spawnPoints[Random.Range(0,spawnPoints.Count)];
             GameObject tmpEnemy = Instantiate(enemies[enemiesToSpawn[0]], tmp.transform.position, Quaternion.identity);
             tmpEnemy.GetComponent<Enemy_BH>().CurrentTarget = tmp;
+            enemiesToSpawn.RemoveAt(0);
         }
     }
     public void CalculateEnemiesToSpawn()
