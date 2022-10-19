@@ -8,6 +8,7 @@ public class WaveData : ScriptableObject
 {
     private List<int>           _idxOfEnemiesOnBudget;
     private int                 _availableBudget;
+    private List<GameObject>    _enemiesSpawned;
 
     public string               spawnPointsTag;
     public List <PathPoint>     spawnPoints;
@@ -25,17 +26,20 @@ public class WaveData : ScriptableObject
         {
             PathPoint tmp = spawnPoints[Random.Range(0,spawnPoints.Count)];
             GameObject tmpEnemy = Instantiate(enemies[enemiesToSpawn[0]], tmp.transform.position, Quaternion.identity);
+            _enemiesSpawned.Add(tmpEnemy);
             tmpEnemy.GetComponent<Enemy_BH>().CurrentTarget = tmp;
             enemiesToSpawn.RemoveAt(0);
         }
     }
 
+    #region waveBudget
     /// <summary>
     /// Calcualtes the enemies that will be spawned in that wave
     /// </summary>
     public void CalculateEnemiesToSpawn()
     {
-        _availableBudget = enemyBudget;
+        _enemiesSpawned     = new List<GameObject>();
+        _availableBudget    = enemyBudget;
         int randIdx;
         while (_availableBudget > 0) {
             SetEnemiesOnBudget();
@@ -65,4 +69,7 @@ public class WaveData : ScriptableObject
             }
         }
     }
+    #endregion
+
+    //PROGRAMAR SABER EL ESTADO DE LOS ENEMIGOS SPAWNEADOS
 }
