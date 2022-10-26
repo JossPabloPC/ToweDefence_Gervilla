@@ -5,10 +5,13 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     private int _currentWave = 0;
+    private float _clock;
     public WaveData[] waves;
 
 
     public int GetCurrentWave { get { return _currentWave; } }
+    public float GetTimeForNextWave { get { return _clock; } }
+
     public static WaveManager Instance;
 
     private void Awake()
@@ -26,6 +29,10 @@ public class WaveManager : MonoBehaviour
         StartNewWave();
     }
 
+
+    /// <summary>
+    /// Starts Spawing enemies from the next wave
+    /// </summary>
     private void StartNewWave()
     {
         if(_currentWave < waves.Length)
@@ -35,9 +42,12 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts the counter for a new Wave
+    /// </summary>
     public void WaitForNewWave()
     {
-        StartCoroutine(TimeNextWave(10));
+        StartCoroutine(TimeNextWave(3));
     }
 
     private IEnumerator TimeNextEnemy(float time) {
@@ -55,11 +65,10 @@ public class WaveManager : MonoBehaviour
 
     private IEnumerator TimeNextWave(float time)
     {
-        float clock = 0;
-        while (clock <= time)
+        _clock = 0;
+        while (_clock <= time)
         {
-            clock += Time.deltaTime;
-            Debug.Log(clock);
+            _clock += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
         StartNewWave();
