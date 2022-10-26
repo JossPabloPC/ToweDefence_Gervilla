@@ -9,7 +9,7 @@ public class ObjectWithGun : MonoBehaviour
     protected   GameObject      _projectile;
     protected   float           _range;
     protected   SphereCollider  _collider; 
-    private     float           _clock;
+    private     bool            _canFire;
 
 
     protected float RealRateOfFire
@@ -20,8 +20,7 @@ public class ObjectWithGun : MonoBehaviour
 
     protected virtual void Start()
     {
-        _clock              = 0;
-
+        _canFire            = true;
         _collider           = gameObject.GetComponent<SphereCollider>();
         _collider.isTrigger = true;
     }
@@ -38,16 +37,16 @@ public class ObjectWithGun : MonoBehaviour
     /// <param name="canonEnd"></param>
     protected void Fire(Transform canonEnd)
     {
-        if (_clock >= RealRateOfFire)
+        if (_canFire)
         {
-            _clock = 0;
             Instantiate(_projectile, canonEnd.position, canonEnd.rotation);
         }
     }
-    protected void UpdateClockToFire()
+    private IEnumerator UpdateClockToFire()
     {
-        _clock += Time.deltaTime;
-        _clock = Mathf.Clamp(_clock, 0 , RealRateOfFire + 1);
+        _canFire = false;
+        yield return new WaitForSeconds(RealRateOfFire);
+        _canFire = true;
     }
 
 }
