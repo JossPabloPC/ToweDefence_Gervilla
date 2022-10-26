@@ -15,8 +15,12 @@ MonoBehaviour:
   spawnPointsTag: A
   spawnPoints:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   enemies:
   - {fileID: 4489188936142032941, guid: 29eb4499e94907c4f803ef9d0fa5f032, type: 3}
   - {fileID: 4489188936142032941, guid: 1a555bd9cd39dfa40aa0aeb419579c73, type: 3}
-  enemyBudget: 3
+  enemyBudget: 5
   enemiesToSpawn: 

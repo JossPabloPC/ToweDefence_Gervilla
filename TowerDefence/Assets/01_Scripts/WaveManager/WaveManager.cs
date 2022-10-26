@@ -6,8 +6,9 @@ public class WaveManager : MonoBehaviour
 {
     private int _currentWave = 0;
     public WaveData[] waves;
-    public static List<GameObject> enemiesOnScene = new List<GameObject>();
-    
+
+
+    public int GetCurrentWave { get { return _currentWave; } }
     public static WaveManager Instance;
 
     private void Awake()
@@ -22,22 +23,24 @@ public class WaveManager : MonoBehaviour
     }
     private void Start()
     {
-        waves[_currentWave].CalculateEnemiesToSpawn();
-        StartCoroutine(TimeNextEnemy(1));
+        StartNewWave();
     }
 
-    public void CheckEnemiesStatus()
+    private void StartNewWave()
     {
-        for (int i = 0; i < enemiesOnScene.Count; i++)
+        if(_currentWave < waves.Length)
         {
-            if (!enemiesOnScene[i].activeInHierarchy)
-                enemiesOnScene.RemoveAt(i);
+            waves[_currentWave].CalculateEnemiesToSpawn();
+            StartCoroutine(TimeNextEnemy(1));
         }
     }
-    
 
+    public void WaitForNewWave()
+    {
+        StartCoroutine(TimeNextWave(10));
+    }
 
-    IEnumerator TimeNextEnemy(float time) {
+    private IEnumerator TimeNextEnemy(float time) {
         while (waves[_currentWave].enemiesToSpawn.Count > 0) { 
             float _currTime = 0;
             while (_currTime <= time)
@@ -45,8 +48,20 @@ public class WaveManager : MonoBehaviour
                 _currTime += Time.deltaTime;
                 yield return new WaitForEndOfFrame();
             }
-            Debug.Log("Spawn enemy");
             waves[_currentWave].spawnEnemy();
         }
+        _currentWave++;
+    }
+
+    private IEnumerator TimeNextWave(float time)
+    {
+        float clock = 0;
+        while (clock <= time)
+        {
+            clock += Time.deltaTime;
+            Debug.Log(clock);
+            yield return new WaitForEndOfFrame();
+        }
+        StartNewWave();
     }
 }

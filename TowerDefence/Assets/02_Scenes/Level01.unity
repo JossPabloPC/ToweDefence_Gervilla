@@ -1831,6 +1831,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 11400000, guid: 828497f1a785a6349af0281f13388d67, type: 2}
+  - {fileID: 11400000, guid: 828497f1a785a6349af0281f13388d67, type: 2}
+  - {fileID: 11400000, guid: 828497f1a785a6349af0281f13388d67, type: 2}
+  - {fileID: 11400000, guid: 828497f1a785a6349af0281f13388d67, type: 2}
+  - {fileID: 11400000, guid: 828497f1a785a6349af0281f13388d67, type: 2}
 --- !u!4 &957382991
 Transform:
   m_ObjectHideFlags: 0

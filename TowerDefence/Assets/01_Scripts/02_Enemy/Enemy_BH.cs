@@ -15,9 +15,12 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
 
     private void OnEnable()
     {
-        _currentHealth = _enemyData._health;
-        WaveManager.enemiesOnScene.Add(this.gameObject);
-        
+        _currentHealth = _enemyData._health;        
+    }
+
+    private void OnDisable()
+    {
+        WaveManager.Instance.waves[WaveManager.Instance.GetCurrentWave].RemoveEnemyFromList(true, this.gameObject);
     }
     private void Update()
     {

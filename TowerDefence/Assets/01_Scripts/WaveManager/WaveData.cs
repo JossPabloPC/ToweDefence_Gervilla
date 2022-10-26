@@ -26,7 +26,7 @@ public class WaveData : ScriptableObject
         {
             PathPoint tmp = spawnPoints[Random.Range(0,spawnPoints.Count)];
             GameObject tmpEnemy = Instantiate(enemies[enemiesToSpawn[0]], tmp.transform.position, Quaternion.identity);
-            _enemiesSpawned.Add(tmpEnemy);
+            AddEnemytoList(true, tmpEnemy);
             tmpEnemy.GetComponent<Enemy_BH>().CurrentTarget = tmp;
             enemiesToSpawn.RemoveAt(0);
         }
@@ -72,4 +72,23 @@ public class WaveData : ScriptableObject
     #endregion
 
     //PROGRAMAR SABER EL ESTADO DE LOS ENEMIGOS SPAWNEADOS
+    public void AddEnemytoList(bool printList, GameObject enemy)
+    {
+        _enemiesSpawned.Add(enemy);
+        if (printList)
+            Debug.Log(_enemiesSpawned.Count);
+    }
+
+    public void RemoveEnemyFromList(bool printList, GameObject enemy)
+    {
+        _enemiesSpawned.Remove(enemy);
+        if (printList)
+            Debug.Log(_enemiesSpawned.Count);
+        if(_enemiesSpawned.Count == 0)
+        {
+            WaveManager.Instance.WaitForNewWave();
+        }
+    }
+
+
 }
