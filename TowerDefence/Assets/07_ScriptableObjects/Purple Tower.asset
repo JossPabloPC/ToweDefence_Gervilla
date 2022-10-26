@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e69e3a8e311f74d924e7b2f01f19e9, type: 3}
   m_Name: Purple Tower
   m_EditorClassIdentifier: 
-  rateOfFire: 3
+  rateOfFire: 5
   projectile: {fileID: 3110387901319591469, guid: 1a88c14a686e6334ab6be2906fd8c0ad, type: 3}
   range: 3.22
