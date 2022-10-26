@@ -20,7 +20,8 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
 
     private void OnDisable()
     {
-        WaveManager.Instance.waves[WaveManager.Instance.GetCurrentWave].RemoveEnemyFromList(true, this.gameObject);
+        if(WaveManager.Instance != null)
+            WaveManager.Instance?.waves[WaveManager.Instance.GetCurrentWave]?.RemoveEnemyFromList(true, this.gameObject);
     }
     private void Update()
     {

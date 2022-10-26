@@ -25,11 +25,6 @@ public class ObjectWithGun : MonoBehaviour
         _collider.isTrigger = true;
     }
 
-    protected virtual void Update()
-    {
-        UpdateClockToFire();
-    }
-
     protected virtual void AssignGunStats(){}
     /// <summary>
     /// Instantiates a projectile on the canon end tranform
@@ -40,9 +35,10 @@ public class ObjectWithGun : MonoBehaviour
         if (_canFire)
         {
             Instantiate(_projectile, canonEnd.position, canonEnd.rotation);
+            StartCoroutine(StartClockToFire());
         }
     }
-    private IEnumerator UpdateClockToFire()
+    private IEnumerator StartClockToFire()
     {
         _canFire = false;
         yield return new WaitForSeconds(RealRateOfFire);

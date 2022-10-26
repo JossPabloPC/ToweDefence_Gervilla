@@ -50,6 +50,10 @@ public class WaveManager : MonoBehaviour
         StartCoroutine(TimeNextWave(3));
     }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
     private IEnumerator TimeNextEnemy(float time) {
         while (waves[_currentWave].enemiesToSpawn.Count > 0) { 
             float _currTime = 0;

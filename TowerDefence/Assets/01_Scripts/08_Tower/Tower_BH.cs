@@ -16,9 +16,8 @@ public class Tower_BH : ObjectWithGun
         AssignGunStats();
     }
 
-    protected override void Update()
+    protected  void Update()
     {
-        base.Update();
         LockOnTarget();
     }
     protected override void AssignGunStats()

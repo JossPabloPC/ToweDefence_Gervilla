@@ -31,7 +31,7 @@ public class Damagable_Body : MonoBehaviour
         {
             _currentHealth -= 0.01f;
             _OnReceiveDamage.Invoke();
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForFixedUpdate();
         } while (_currentHealth >= objetivo);
     }
 }
