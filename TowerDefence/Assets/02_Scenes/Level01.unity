@@ -161,7 +161,7 @@ Transform:
   - {fileID: 687107489}
   - {fileID: 1813806014}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &103356144
 PrefabInstance:
@@ -585,8 +585,8 @@ MonoBehaviour:
         m_MethodName: ButtonClicked
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4902708299852037205, guid: bc8d76aa4f3390e46bb23d507062f96f, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 76e82fc1c8399bd46b3a8371069976f9, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TowerData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -830,8 +830,8 @@ MonoBehaviour:
         m_MethodName: ButtonClicked
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4902708299852037205, guid: 155691f637dd64143b054cfbe8ca9bf5, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 7e972744c3cce564da06213f3c1fc101, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TowerData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1327,6 +1327,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492779237}
   m_CullTransparentMesh: 1
+--- !u!1 &498059896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498059897}
+  - component: {fileID: 498059898}
+  m_Layer: 0
+  m_Name: BulletPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &498059897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498059896}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2013765196}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &498059898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498059896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ac1f9bbe2783440a06a0d2fcd32595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 3110387901319591469, guid: 1a88c14a686e6334ab6be2906fd8c0ad, type: 3}
+  _defaultCapacity: 10
+  _maxCapacity: 50
 --- !u!1 &533743200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1470,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &536075620 stripped
 Transform:
@@ -1602,8 +1649,8 @@ MonoBehaviour:
         m_MethodName: ButtonClicked
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4902708299852037205, guid: 772ebabe2dd71db4a86424a9998c89d6, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: a3e7e5f22b40cff4293daa5ef49127f2, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TowerData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2027,7 +2074,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -2127,6 +2174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
+  _gameData: {fileID: 11400000, guid: 80885aa2e2ab882488617f2b9ced13ee, type: 2}
 --- !u!1 &976266857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,7 +2332,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1079820559
 GameObject:
@@ -2421,6 +2469,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079820559}
   m_CullTransparentMesh: 1
+--- !u!1 &1090912985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090912986}
+  - component: {fileID: 1090912987}
+  m_Layer: 0
+  m_Name: TowerPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1090912986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090912985}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2013765196}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1090912987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090912985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe674f678bc63545961b6e81a1f6c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 4902708299852037205, guid: 772ebabe2dd71db4a86424a9998c89d6, type: 3}
+  _defaultCapacity: 5
+  _maxCapacity: 15
 --- !u!1 &1091082339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,7 +2674,7 @@ Transform:
   - {fileID: 705507995}
   - {fileID: 976266858}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1258868309
 PrefabInstance:
@@ -3317,7 +3412,7 @@ Transform:
   - {fileID: 670367034}
   - {fileID: 308923979}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1588858159
 GameObject:
@@ -3424,7 +3519,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1630198686 stripped
 Transform:
@@ -3659,7 +3754,7 @@ Transform:
   - {fileID: 764805225}
   - {fileID: 1662681466}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1850515195
 GameObject:
@@ -3692,7 +3787,7 @@ Transform:
   - {fileID: 1365439602}
   - {fileID: 1703583530}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1897086649
 GameObject:
@@ -4149,6 +4244,39 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &2013765195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2013765196}
+  m_Layer: 0
+  m_Name: ---Poolers---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2013765196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013765195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8350792, y: -2.816724, z: -6.632433}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 498059897}
+  - {fileID: 1090912986}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7230058167650910596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4210,3 +4338,48 @@ PrefabInstance:
       objectReference: {fileID: 933269241}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8eac7a6be40a741a375de1ff5121b6, type: 3}
+--- !u!4 &9029442886319723420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9029442886319755196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.215, y: 0.485, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9029442886319755196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9029442886319723420}
+  - component: {fileID: 9029442886319755197}
+  m_Layer: 0
+  m_Name: ammo_machinegun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &9029442886319755197
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9029442886319755196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034869313, y: 0.07379329, z: 0.039678812}
+  m_Center: {x: -0.0004183799, y: 0.037030876, z: 0.0002515167}
