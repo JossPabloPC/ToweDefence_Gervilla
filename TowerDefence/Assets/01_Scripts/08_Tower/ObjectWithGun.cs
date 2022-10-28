@@ -34,7 +34,7 @@ public class ObjectWithGun : MonoBehaviour
     {
         if (_canFire)
         {
-            Instantiate(_projectile, canonEnd.position, canonEnd.rotation);
+            BulletPooler.Instance.SpawnBullet(canonEnd.position, canonEnd.rotation);
             StartCoroutine(StartClockToFire());
         }
     }

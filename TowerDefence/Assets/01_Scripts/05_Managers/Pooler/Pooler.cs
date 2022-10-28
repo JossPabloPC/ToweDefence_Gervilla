@@ -8,7 +8,7 @@ public class Pooler : MonoBehaviour
     [SerializeField] protected GameObject _object;
     [SerializeField] protected int _defaultCapacity;
     [SerializeField] protected int _maxCapacity;
-    public static ObjectPool<GameObject> pool;
+    protected ObjectPool<GameObject> pool;
     
 
     protected virtual void Start()
