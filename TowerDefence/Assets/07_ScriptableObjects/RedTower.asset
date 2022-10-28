@@ -15,3 +15,5 @@ MonoBehaviour:
   rateOfFire: 2
   projectile: {fileID: 3110387901319591469, guid: 1a88c14a686e6334ab6be2906fd8c0ad, type: 3}
   range: 2.84
+  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: 9e2f4222a26b9504eaf5b78bb8c537c4, type: 2}
