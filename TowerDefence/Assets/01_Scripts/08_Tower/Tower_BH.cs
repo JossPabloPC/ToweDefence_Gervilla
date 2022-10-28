@@ -4,29 +4,22 @@ using UnityEngine;
 
 public class Tower_BH : ObjectWithGun
 {
-    [SerializeReference] private TowerData data;
+    public TowerData data;
     [SerializeReference] private Transform _canonEnd;
 
     [SerializeReference] private List<Enemy_BH> _enemiesOnTarget;
 
 
-    protected override void Start()
+    protected override void OnEnable()
     {
-        base.Start();
-        AssignGunStats();
+        base.OnEnable();
     }
 
     protected  void Update()
     {
         LockOnTarget();
     }
-    protected override void AssignGunStats()
-    {
-        _rateOfFire         = data.rateOfFire;
-        _range              = data.range;
-        _projectile         = data.projectile;
-        _collider.radius    = _range;
-    }
+
 
     private void OnDrawGizmosSelected()
     {
@@ -37,6 +30,7 @@ public class Tower_BH : ObjectWithGun
         }
     }
 
+    #region Attack Enemies
     private void LockOnTarget()
     {
         CheckListStatus();
@@ -48,6 +42,19 @@ public class Tower_BH : ObjectWithGun
 
     }
 
+    private void CheckListStatus()
+    {
+        for (int i = 0; i < _enemiesOnTarget.Count; i++)
+        {
+            if (!_enemiesOnTarget[i].gameObject.activeInHierarchy)
+            {
+                _enemiesOnTarget.RemoveAt(i);
+            }
+        }
+    }
+    #endregion
+
+    #region Collisons
     private void OnTriggerEnter(Collider other)
     {
         Enemy_BH tmp = other.GetComponent<Enemy_BH>();
@@ -66,15 +73,30 @@ public class Tower_BH : ObjectWithGun
             _enemiesOnTarget.Remove(tmp);
         }
     }
-    private void CheckListStatus()
+
+#endregion
+
+    #region ScriptableObj
+    public void AssignTowerData()
     {
-        for(int i = 0; i < _enemiesOnTarget.Count; i++)
-        {
-            if (!_enemiesOnTarget[i].gameObject.activeInHierarchy)
-            {
-                _enemiesOnTarget.RemoveAt(i);
-            }
-        }
+        GetComponent<MeshFilter>().mesh = data.mesh;
+        GetComponent<MeshRenderer>().material = data.material;
+
+        _rateOfFire = data.rateOfFire;
+        _range = data.range;
+        _projectile = data.projectile;
+        _collider.radius = _range;
+
+        AssignGunStats();
     }
+
+    protected override void AssignGunStats()
+    {
+        _rateOfFire = data.rateOfFire;
+        _range = data.range;
+        _projectile = data.projectile;
+        _collider.radius = _range;
+    }
+    #endregion
 
 }

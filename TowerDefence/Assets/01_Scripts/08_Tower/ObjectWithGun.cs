@@ -18,7 +18,7 @@ public class ObjectWithGun : MonoBehaviour
     }
 
 
-    protected virtual void Start()
+    protected virtual void OnEnable()
     {
         _canFire            = true;
         _collider           = gameObject.GetComponent<SphereCollider>();

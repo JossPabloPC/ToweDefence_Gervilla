@@ -7,8 +7,8 @@ public class TowerButton : MonoBehaviour
 
     [SerializeField] private GameData _gameData;
 
-    public void ButtonClicked(GameObject tower)
+    public void ButtonClicked(TowerData towerData)
     {
-        _gameData._TowerSelected = tower;
+        _gameData._TowerSelected = towerData;
     }
 }

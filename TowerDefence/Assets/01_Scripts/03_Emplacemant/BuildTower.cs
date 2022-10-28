@@ -7,7 +7,6 @@ public class BuildTower : MonoBehaviour
 {
     [SerializeField]private GameData    _gameData;
 
-    private GameObject  _tower;
     private bool        _towerUsed;
 
     private void Start()
@@ -15,13 +14,12 @@ public class BuildTower : MonoBehaviour
         _towerUsed = false;
     }
 
-    public void Build()
+    public void Build(TowerData data)
     {
         if (!_towerUsed && _gameData._TowerSelected != null)
         {
             _towerUsed  = true;
-            _tower      = _gameData._TowerSelected;
-            Instantiate(_tower, transform.position + Vector3.up * 0.66f, Quaternion.identity);
+            TowerPooler.Instance.SpawnTower(transform.position + Vector3.up * 0.66f, Quaternion.identity, data);
         }
     }
 
