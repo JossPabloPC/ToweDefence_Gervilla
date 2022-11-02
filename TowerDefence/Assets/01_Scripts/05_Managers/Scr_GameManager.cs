@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Scr_GameManager : MonoBehaviour
 {
-    [SerializeField] private GameData _gameData;
+    [SerializeField] private GameData   _gameData;
+    [SerializeField] private City       _city;
     void Start()
     {
+        _city.OnDeath += CityDamaged;
         Cursor.visible = true;
         setGameData();
     }
@@ -16,5 +18,10 @@ public class Scr_GameManager : MonoBehaviour
     {
         _gameData._credit = 0;
         _gameData._TowerSelected = null;
+    }
+
+    private void CityDamaged()
+    {
+        Debug.Log("City Destroyed!");
     }
 }

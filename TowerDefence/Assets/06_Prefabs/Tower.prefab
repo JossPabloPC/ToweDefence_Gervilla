@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6118560784073518213}
   - component: {fileID: 7744432985136277177}
   m_Layer: 2
-  m_Name: Tower  2
+  m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9e2f4222a26b9504eaf5b78bb8c537c4, type: 2}
+  - {fileID: 2100000, guid: b5bffea9aba53c941bbafb26c4992a59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,7 +128,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.61
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7744432985136277177
 MonoBehaviour:
@@ -142,6 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066e2d8a36f502445aee71ecf28d670f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 76e82fc1c8399bd46b3a8371069976f9, type: 2}
+  data: {fileID: 0}
   _canonEnd: {fileID: 1757125575028871178}
   _enemiesOnTarget: []

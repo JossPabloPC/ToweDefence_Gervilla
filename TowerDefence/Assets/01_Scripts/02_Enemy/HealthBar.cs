@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
     }
     public void UpdateHealthBar()
     {
-        _healthBar.fillAmount = _master.CurrentHealthNormalized;
+        _healthBar.fillAmount = _master.CurrentHealthNormalized + 0.05f;
         _healthBar.color = _healthColors.Evaluate(_master.CurrentHealthNormalized);
     }
 }

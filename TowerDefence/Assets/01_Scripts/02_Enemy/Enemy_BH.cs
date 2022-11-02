@@ -60,6 +60,13 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
         }
     }
 
+    public void AssualtCity(Damagable_Body city)
+    {
+        city.receiveDamage(1);
+        _currentHealth = 0;
+        receiveDamage((int)_currentHealth);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Bullet_BH tmp = other.GetComponent<Bullet_BH>();

@@ -20,7 +20,7 @@ public class Damagable_Body : MonoBehaviour
         StartCoroutine(reduceHealth(damage));
         if(_currentHealth <= 0)
         {
-            gameObject.SetActive(false);
+            killObject();
         }
     }
 
@@ -29,9 +29,16 @@ public class Damagable_Body : MonoBehaviour
         float objetivo = _currentHealth - damage;
         do
         {
-            _currentHealth -= 0.01f;
+            _currentHealth -= 0.1f;
             _OnReceiveDamage.Invoke();
             yield return new WaitForFixedUpdate();
         } while (_currentHealth >= objetivo);
+        _OnReceiveDamage.Invoke();
+
+    }
+
+    protected virtual void killObject()
+    {
+        gameObject.SetActive(false);
     }
 }
