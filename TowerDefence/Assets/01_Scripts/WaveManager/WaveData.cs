@@ -26,7 +26,7 @@ public class WaveData : ScriptableObject
         {
             PathPoint tmp = spawnPoints[Random.Range(0,spawnPoints.Count)];
             GameObject tmpEnemy = Instantiate(enemies[enemiesToSpawn[0]], tmp.transform.position, Quaternion.identity);
-            AddEnemytoList(true, tmpEnemy);
+            AddEnemytoList(false, tmpEnemy);
             tmpEnemy.GetComponent<Enemy_BH>().CurrentTarget = tmp;
             enemiesToSpawn.RemoveAt(0);
         }

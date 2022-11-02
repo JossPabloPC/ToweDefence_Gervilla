@@ -7,6 +7,7 @@ public class Damagable_Body : MonoBehaviour
 {
     [SerializeField] private UnityEvent _OnReceiveDamage;
 
+
     protected   float       _currentHealth;
     public      AliveObject _objectData;
 
@@ -18,10 +19,6 @@ public class Damagable_Body : MonoBehaviour
     public virtual void receiveDamage(int damage)
     {
         StartCoroutine(reduceHealth(damage));
-        if(_currentHealth <= 0)
-        {
-            killObject();
-        }
     }
 
     IEnumerator reduceHealth(int damage)
@@ -31,9 +28,12 @@ public class Damagable_Body : MonoBehaviour
         {
             _currentHealth -= 0.1f;
             _OnReceiveDamage.Invoke();
+            if (_currentHealth <= 0)
+            {
+                killObject();
+            }
             yield return new WaitForFixedUpdate();
         } while (_currentHealth >= objetivo);
-        _OnReceiveDamage.Invoke();
 
     }
 

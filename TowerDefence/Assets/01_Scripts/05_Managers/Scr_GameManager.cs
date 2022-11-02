@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class Scr_GameManager : MonoBehaviour
 {
+    public static Scr_GameManager Instance;
+
+    public delegate void Notify();
+    public event Notify OnGameOver;
+
     [SerializeField] private GameData   _gameData;
     [SerializeField] private City       _city;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         _city.OnDeath += CityDamaged;
@@ -23,5 +33,6 @@ public class Scr_GameManager : MonoBehaviour
     private void CityDamaged()
     {
         Debug.Log("City Destroyed!");
+        OnGameOver.Invoke();
     }
 }

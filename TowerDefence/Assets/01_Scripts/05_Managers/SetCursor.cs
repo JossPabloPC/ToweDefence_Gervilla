@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetCursor : MonoBehaviour
 {
@@ -15,4 +16,6 @@ public class SetCursor : MonoBehaviour
     {
         Cursor.SetCursor(texture, Vector2.zero, CursorMode.Auto);
     }
+
+
 }
