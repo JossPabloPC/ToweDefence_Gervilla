@@ -13,6 +13,7 @@ public class HealthNumber : MonoBehaviour
     private void Start()
     {
         _healthText = GetComponent<TMP_Text>();
+        _master.OnReceiveDmg += UpdateText;
     }
     public void UpdateText()
     {

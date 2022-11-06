@@ -14,6 +14,7 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         _healthBar = GetComponent<Image>();
+        _master.OnReceiveDmg += UpdateHealthBar;
     }
     public void UpdateHealthBar()
     {

@@ -71,7 +71,6 @@ public class WaveData : ScriptableObject
     }
     #endregion
 
-    //PROGRAMAR SABER EL ESTADO DE LOS ENEMIGOS SPAWNEADOS
     public void AddEnemytoList(bool printList, GameObject enemy)
     {
         _enemiesSpawned.Add(enemy);
@@ -87,6 +86,7 @@ public class WaveData : ScriptableObject
         if(_enemiesSpawned.Count == 0)
         {
             WaveManager.Instance.WaitForNewWave();
+            WaveManager.Instance.CurrentWave ++;
         }
     }
 

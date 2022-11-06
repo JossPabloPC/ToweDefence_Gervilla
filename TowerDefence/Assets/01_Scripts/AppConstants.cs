@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class AppConstants
 {
-    public static readonly string MENUSCENE = "Menu"; 
-    public static readonly string LEVEL_01 = "Level01";
+    public static readonly string MENUSCENE     = "Menu"; 
+    public static readonly string LEVEL_01      = "Level01";
 }

@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public class Damagable_Body : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _OnReceiveDamage;
+    public delegate void Notify();
+    public event Notify OnReceiveDmg;
 
 
     protected   float       _currentHealth;
@@ -18,6 +19,7 @@ public class Damagable_Body : MonoBehaviour
     }
     public virtual void receiveDamage(int damage)
     {
+        MusicManager.Instance.PlaySound("Hurt");
         StartCoroutine(reduceHealth(damage));
     }
 
@@ -27,7 +29,7 @@ public class Damagable_Body : MonoBehaviour
         do
         {
             _currentHealth -= 0.1f;
-            _OnReceiveDamage.Invoke();
+            OnReceiveDmg.Invoke();
             if (_currentHealth <= 0)
             {
                 killObject();

@@ -6,5 +6,4 @@ using UnityEngine;
 public class AliveObject : ScriptableObject
 {
     public int _health;
-
 }

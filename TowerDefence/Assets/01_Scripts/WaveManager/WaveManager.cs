@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    public delegate void Notify();
+    public event Notify OnWavesEnded;
+
     private int _currentWave = 0;
     private float _clock;
     public WaveData[] waves;
 
 
-    public int GetCurrentWave { get { return _currentWave; } }
+    public int CurrentWave
+    {
+        get { return _currentWave; }
+        set
+        { 
+            _currentWave = value;
+            if (_currentWave == waves.Length)
+                OnWavesEnded.Invoke();
+        }
+    }
     public float GetTimeForNextWave { get { return _clock; } }
 
     public static WaveManager Instance;
@@ -28,7 +40,6 @@ public class WaveManager : MonoBehaviour
     {
         StartNewWave();
     }
-
 
     /// <summary>
     /// Starts Spawing enemies from the next wave
@@ -64,7 +75,6 @@ public class WaveManager : MonoBehaviour
             }
             waves[_currentWave].spawnEnemy();
         }
-        _currentWave++;
     }
 
     private IEnumerator TimeNextWave(float time)

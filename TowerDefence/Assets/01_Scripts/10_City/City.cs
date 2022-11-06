@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class City : Damagable_Body
 {
-    public delegate void Notify();
     public event Notify OnDeath;
 
 

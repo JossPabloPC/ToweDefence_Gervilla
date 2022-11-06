@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Enemy_BH : Damagable_Body, MoveToTarget_IE
 {
-    [SerializeField] public Enemy_Data  _enemyData;
-    [SerializeField] private PathPoint  _currentTarget;
+    [SerializeField] public Enemy_Data      _enemyData;
+    [SerializeField] protected PathPoint    _currentTarget;
 
-    public PathPoint CurrentTarget
+    public virtual PathPoint CurrentTarget
     {
         set { _currentTarget = value; }
         get { return _currentTarget; }}
 
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _currentHealth = _enemyData._health;        
     }
@@ -21,9 +21,9 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
     private void OnDisable()
     {
         if(WaveManager.Instance != null)
-            WaveManager.Instance?.waves[WaveManager.Instance.GetCurrentWave]?.RemoveEnemyFromList(true, this.gameObject);
+            WaveManager.Instance?.waves[WaveManager.Instance.CurrentWave]?.RemoveEnemyFromList(false, this.gameObject);
     }
-    private void Update()
+    protected virtual void Update()
     {
         if (_currentTarget != null)
         {
@@ -32,7 +32,7 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
         }
     }
 
-    public void moveToTarget(Vector3 target)
+    public virtual void moveToTarget(Vector3 target)
     {
         Vector3 direction = target - gameObject.transform.position;
         gameObject.transform.Translate(direction.normalized * _enemyData._speed * Time.deltaTime);
@@ -48,7 +48,7 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
         return Target_point?.NextPoint;
     }
 
-    public void CheckTarget()
+    public virtual void CheckTarget()
     {
         if(GetDistanceToTarget(_currentTarget.gameObject.transform.position) <= 0.1f)
         {
