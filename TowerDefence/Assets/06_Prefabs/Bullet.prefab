@@ -41,7 +41,7 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188130333337670371}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet_Data: {fileID: 11400000, guid: 2067ec7a2a6016c459ff4234c4ef5333, type: 2}
+  _trail: {fileID: 1505582216320474425}
 --- !u!65 &2555718021872976048
 BoxCollider:
   m_ObjectHideFlags: 0

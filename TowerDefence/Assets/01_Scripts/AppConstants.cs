@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AppConstants
 {
-    private static readonly string MENUSCENE     = "Menu"; 
-    private static readonly string LEVEL_01      = "Level01";
+    public  static readonly string MENUSCENE     = "Menu"; 
+    public  static readonly string LEVEL_01      = "Level01";
 
 
 
@@ -25,8 +25,7 @@ public class AppConstants
     }
 }
 
-
 public enum Scenes
 {
-    MENU, LEVEL_01
+    MENU = 0, LEVEL_01 = 1
 }

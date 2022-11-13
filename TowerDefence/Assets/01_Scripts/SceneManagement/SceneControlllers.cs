@@ -25,8 +25,9 @@ public class SceneControlllers :MonoBehaviour
 
     }
 
-    public void LoadScene(Scene scene)
+    public void LoadSelectedScene(int sceneSelected)
     {
-        SceneManager.LoadScene(AppConstants.GetScene(Scenes.MENU));
+        SceneManager.LoadScene(AppConstants.GetScene((Scenes)sceneSelected));
     }
+
 }
