@@ -16,12 +16,17 @@ public class SceneControlllers :MonoBehaviour
     public IEnumerator LoadBar()
     {
 
-        AsyncOperation operation = SceneManager.LoadSceneAsync(AppConstants.LEVEL_01);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(AppConstants.GetScene(Scenes.LEVEL_01));
         while (!operation.isDone)
         {
             _image.fillAmount = operation.progress;
             yield return new WaitForEndOfFrame();
         }
 
+    }
+
+    public void LoadScene(Scene scene)
+    {
+        SceneManager.LoadScene(AppConstants.GetScene(Scenes.MENU));
     }
 }
