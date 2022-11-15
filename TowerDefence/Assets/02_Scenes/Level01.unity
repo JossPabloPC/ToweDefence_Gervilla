@@ -3090,6 +3090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73fd4da39d18c541b6322a684c712a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  credits: 0
   _gameData: {fileID: 11400000, guid: 80885aa2e2ab882488617f2b9ced13ee, type: 2}
   _city: {fileID: 317888061}
   _waveManager: {fileID: 957382990}
@@ -3378,6 +3379,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 11400000, guid: 828497f1a785a6349af0281f13388d67, type: 2}
+  - {fileID: 11400000, guid: f378e6369b1126f4ca5617c31b9f230d, type: 2}
+  - {fileID: 11400000, guid: f378e6369b1126f4ca5617c31b9f230d, type: 2}
+  - {fileID: 11400000, guid: f378e6369b1126f4ca5617c31b9f230d, type: 2}
 --- !u!4 &957382991
 Transform:
   m_ObjectHideFlags: 0

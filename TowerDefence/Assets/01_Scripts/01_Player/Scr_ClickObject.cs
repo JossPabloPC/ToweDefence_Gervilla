@@ -23,7 +23,11 @@ public class Scr_ClickObject : MonoBehaviour
             {
                 
                 BuildTower tmp =  hit.collider.gameObject.GetComponent<BuildTower>();
-                tmp?.Build(_gameData._TowerSelected);
+                if(Scr_GameManager.Instance.credits >= _gameData._TowerSelected.cost)
+                {
+                    tmp?.Build(_gameData._TowerSelected);
+
+                }
             }
         }
     }

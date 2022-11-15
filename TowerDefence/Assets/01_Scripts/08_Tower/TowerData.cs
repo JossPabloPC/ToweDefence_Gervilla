@@ -6,6 +6,7 @@ using UnityEngine;
 [SerializeField]
 public class TowerData : ScriptableObject
 {
+    public int          cost;
     public float        rateOfFire;
     public GameObject   projectile;
     public float        range;

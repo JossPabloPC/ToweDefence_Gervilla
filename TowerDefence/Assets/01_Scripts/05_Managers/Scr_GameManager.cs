@@ -9,6 +9,8 @@ public class Scr_GameManager : MonoBehaviour
     public delegate void Notify();
     public event Notify OnGameOver;
     public event Notify OnGameWin;
+    
+    public int  credits;
 
     [SerializeField] private GameData       _gameData;
     [SerializeField] private City           _city;
@@ -34,7 +36,7 @@ public class Scr_GameManager : MonoBehaviour
 
     private void setGameData()
     {
-        _gameData._credit = 0;
+        credits = _gameData.startingCredits;
         _gameData._TowerSelected = null;
     }
 
