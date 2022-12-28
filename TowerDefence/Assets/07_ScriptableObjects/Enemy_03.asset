@@ -16,3 +16,4 @@ MonoBehaviour:
   _speed: 1
   _budgetCost: 10
   _creditsWhenKilled: 5
+  _enemyType: 1

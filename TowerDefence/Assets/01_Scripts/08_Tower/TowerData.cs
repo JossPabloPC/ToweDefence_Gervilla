@@ -8,6 +8,7 @@ public class TowerData : ScriptableObject
 {
     public int          cost;
     public float        rateOfFire;
+    public float        rotationSpeed;
     public GameObject   projectile;
     public float        range;
     public Mesh         mesh;
