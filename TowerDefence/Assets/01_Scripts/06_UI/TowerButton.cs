@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TowerButton : MonoBehaviour
 {
 
     [SerializeField] private GameData _gameData;
+    [SerializeField] private TMP_Text _towerCostText;
+    [SerializeField] private TowerData _towerData;
 
-    public void ButtonClicked(TowerData towerData)
+    private void Start()
     {
-        _gameData._TowerSelected = towerData;
+        _towerCostText.text = _towerData.cost.ToString();
+    }
+
+    public void ButtonClicked()
+    {
+        _gameData._TowerSelected = _towerData;
     }
 }

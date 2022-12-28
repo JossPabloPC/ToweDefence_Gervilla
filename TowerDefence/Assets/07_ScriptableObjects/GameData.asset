@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999d65363515aeb41a23c80a77f4d5d4, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  _credit: 0
-  _TowerSelected: {fileID: 0}
+  startingCredits: 20
+  _TowerSelected: {fileID: 11400000, guid: a3e7e5f22b40cff4293daa5ef49127f2, type: 2}

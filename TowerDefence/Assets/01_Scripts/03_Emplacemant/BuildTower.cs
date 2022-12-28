@@ -20,6 +20,7 @@ public class BuildTower : MonoBehaviour
         {
             _towerUsed  = true;
             TowerPooler.Instance.SpawnTower(transform.position + Vector3.up * 0.66f, Quaternion.identity, data);
+            Scr_GameManager.Instance.Towerbought(_gameData._TowerSelected.cost);
         }
     }
 

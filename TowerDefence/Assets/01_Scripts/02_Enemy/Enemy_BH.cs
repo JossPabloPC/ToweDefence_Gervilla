@@ -20,6 +20,7 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
 
     private void OnDisable()
     {
+        Scr_GameManager.Instance.EnemyKilled(_enemyData._creditsWhenKilled);
         if(WaveManager.Instance != null)
             WaveManager.Instance?.waves[WaveManager.Instance.CurrentWave]?.RemoveEnemyFromList(false, this.gameObject);
     }
