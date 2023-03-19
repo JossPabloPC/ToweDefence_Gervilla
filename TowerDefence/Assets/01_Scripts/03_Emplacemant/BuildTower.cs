@@ -9,6 +9,8 @@ public class BuildTower : MonoBehaviour
 
     private bool        _towerUsed;
 
+    public bool TowerUsed { get { return _towerUsed; }}
+
     private void Start()
     {
         _towerUsed = false;
@@ -16,11 +18,12 @@ public class BuildTower : MonoBehaviour
 
     public void Build(TowerData data)
     {
-        if (!_towerUsed && _gameData._TowerSelected != null)
+        if (!_towerUsed && _gameData.towerSelected != null)
         {
             _towerUsed  = true;
             TowerPooler.Instance.SpawnTower(transform.position + Vector3.up * 0.66f, Quaternion.identity, data);
-            Scr_GameManager.Instance.Towerbought(_gameData._TowerSelected.cost);
+            Scr_GameManager.Instance.Towerbought(_gameData.towerSelected.cost);
+            Scr_GameManager.Instance.DeactivateHologram();
         }
     }
 

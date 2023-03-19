@@ -6,5 +6,5 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     public int          startingCredits;
-    public TowerData    _TowerSelected;
+    public TowerData    towerSelected;
 }

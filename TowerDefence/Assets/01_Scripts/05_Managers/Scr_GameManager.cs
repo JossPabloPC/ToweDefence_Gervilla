@@ -12,6 +12,7 @@ public class Scr_GameManager : MonoBehaviour
     public delegate void NotifyTranform(Transform tranform);
     public event Notify         OnGameOver;
     public event Notify         OnGameWin;
+    public event Notify         OnCursorOutOfBase;
     public event NotifyInt      OnTowerBought;
     public event NotifyInt      OnEnemyKilled;
     public event NotifyTranform OnBaseHover;
@@ -23,6 +24,7 @@ public class Scr_GameManager : MonoBehaviour
     [SerializeField] private City           _city;
     [SerializeField] private WaveManager    _waveManager;
     [SerializeField] private Camera         _currentCamera;
+    [SerializeField] public  GameData       gameData;
 
     public Camera GetCurrentCamera
     {
@@ -50,6 +52,11 @@ public class Scr_GameManager : MonoBehaviour
     {
         OnBaseHover(transform);
     }
+
+    public void DeactivateHologram()
+    {
+        OnCursorOutOfBase();
+    }
     public void EnemyKilled(int cost)
     {
         Instance.credits += cost;
@@ -61,7 +68,7 @@ public class Scr_GameManager : MonoBehaviour
     {
         credits                     = _gameData.startingCredits;
         creditsText.text            = credits.ToString();
-        _gameData._TowerSelected    = null;
+        _gameData.towerSelected    = null;
     }
 
     private void CityDestroyed()

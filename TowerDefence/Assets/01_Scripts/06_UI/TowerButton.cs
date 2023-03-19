@@ -17,6 +17,6 @@ public class TowerButton : MonoBehaviour
 
     public void ButtonClicked()
     {
-        _gameData._TowerSelected = _towerData;
+        _gameData.towerSelected = _towerData;
     }
 }
