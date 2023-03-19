@@ -9,10 +9,12 @@ public class Scr_GameManager : MonoBehaviour
 
     public delegate void Notify();
     public delegate void NotifyInt(int x);
-    public event Notify     OnGameOver;
-    public event Notify     OnGameWin;
-    public event NotifyInt  OnTowerBought;
-    public event NotifyInt  OnEnemyKilled;
+    public delegate void NotifyTranform(Transform tranform);
+    public event Notify         OnGameOver;
+    public event Notify         OnGameWin;
+    public event NotifyInt      OnTowerBought;
+    public event NotifyInt      OnEnemyKilled;
+    public event NotifyTranform OnBaseHover;
 
     public  TMP_Text    creditsText;
     public  int         credits;
@@ -44,6 +46,10 @@ public class Scr_GameManager : MonoBehaviour
         OnTowerBought(Instance.credits);
     }
 
+    public void TransportHologram(Transform transform)
+    {
+        OnBaseHover(transform);
+    }
     public void EnemyKilled(int cost)
     {
         Instance.credits += cost;

@@ -25,11 +25,17 @@ public class BulletPooler : Pooler
         tmp.transform.position = position;
         tmp.transform.rotation = rotation;
 
+        //Emit trail
+        Bullet_BH bulletBh = tmp.GetComponent<Bullet_BH>();
+        bulletBh.trail.time = 0.3f;
+
         return tmp;
     }
 
     public void ReturnBulletToPool(GameObject bullet)
     {
+        Bullet_BH bulletBh = bullet.GetComponent<Bullet_BH>();
+        bulletBh.trail.time = 0;
         pool.Release(bullet);
     }
 }

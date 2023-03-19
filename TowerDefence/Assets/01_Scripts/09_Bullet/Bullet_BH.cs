@@ -5,10 +5,10 @@ using UnityEngine;
 public class Bullet_BH : MonoBehaviour, I_MakeDamage
 {
     [SerializeReference] private Bullet_Data     _bullet_Data;
-    [SerializeReference] private TrailRenderer   _trail;
+    public TrailRenderer   trail;
     private void OnEnable()
     {
-        _trail.emitting = true;
+        trail.emitting = true;
         StartCoroutine(lifeTime());
     }
     void Update()
@@ -24,7 +24,7 @@ public class Bullet_BH : MonoBehaviour, I_MakeDamage
 
     private void OnDisable()
     {
-        _trail.emitting = false;
+        trail.emitting = false;
         StopAllCoroutines();
     }
 

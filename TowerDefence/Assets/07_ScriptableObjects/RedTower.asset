@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 10
   rateOfFire: 2
-  rotationSpeed: 3
+  rotationSpeed: 10
   projectile: {fileID: 3110387901319591469, guid: 1a88c14a686e6334ab6be2906fd8c0ad, type: 3}
   range: 2.84
   mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
