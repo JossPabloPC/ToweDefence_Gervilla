@@ -34,7 +34,21 @@ public class ObjectWithGun : MonoBehaviour
     {
         if (_canFire)
         {
-            BulletPooler.Instance.SpawnBullet(canonEnd.position, canonEnd.rotation);
+            BulletPooler.Instance.SpawnBullet(canonEnd.transform.position, canonEnd.transform.rotation);
+            RaycastHit hit;
+            Ray ray = new Ray(canonEnd.transform.position, canonEnd.forward);
+            if (Physics.Raycast(ray, out hit))
+            {
+                Debug.DrawRay(canonEnd.transform.position, canonEnd.forward * hit.distance, Color.red, 10);
+                Damagable_Body temp = hit.rigidbody.gameObject.GetComponent<Damagable_Body>();
+                temp?.receiveDamage(1);
+            }
+            else
+            {
+                Debug.DrawRay(canonEnd.transform.position, canonEnd.forward * 1000, Color.white, 0.3f);
+                Debug.Log("Did not Hit");
+            }
+            //BulletPooler.Instance.SpawnBullet(canonEnd.position, canonEnd.rotation);
             StartCoroutine(StartClockToFire());
         }
     }

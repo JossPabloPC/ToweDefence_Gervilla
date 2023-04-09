@@ -21,7 +21,7 @@ public class EnemyNavMesh : Enemy_BH
 
     public override void CheckTarget()
     {
-        if (_navMeshAgent.remainingDistance <= 0.1f)
+        if (_navMeshAgent.remainingDistance <= 0.25f)
         {
             PathPoint tmp = _currentTarget.gameObject.GetComponent<PathPoint>();
             if (tmp != null) { 

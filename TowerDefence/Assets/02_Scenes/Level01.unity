@@ -2203,12 +2203,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489649307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1835410231}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &489649309
 MonoBehaviour:
@@ -2343,7 +2343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ac1f9bbe2783440a06a0d2fcd32595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _object: {fileID: 3110387901319591469, guid: 1a88c14a686e6334ab6be2906fd8c0ad, type: 3}
+  _object: {fileID: 100008, guid: 7b142295c8a5d8a4486a67f84893ed08, type: 3}
   _defaultCapacity: 10
   _maxCapacity: 50
 --- !u!1 &506972092
@@ -2514,7 +2514,7 @@ Transform:
   m_GameObject: {fileID: 533743200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 3}
+  m_LocalScale: {x: 24, y: 1, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3363,6 +3363,7 @@ MonoBehaviour:
   _city: {fileID: 317888061}
   _waveManager: {fileID: 957382990}
   _currentCamera: {fileID: 963194227}
+  gameData: {fileID: 11400000, guid: 80885aa2e2ab882488617f2b9ced13ee, type: 2}
 --- !u!1 &895135695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,14 +3646,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.30250573, y: 0.032019798, z: -0.010168592, w: 0.9525553}
-  m_LocalPosition: {x: -0.17383368, y: 3.804326, z: -7}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 0, y: 3.804326, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 41.41, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5684,7 +5685,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hologram
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5099735376707593544, guid: 511fa709e21261c4983590fd546a261b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 511fa709e21261c4983590fd546a261b, type: 3}
 --- !u!1001 &1552783301
 PrefabInstance:
@@ -6615,6 +6617,7 @@ Transform:
   - {fileID: 764805225}
   - {fileID: 1662681466}
   - {fileID: 957382991}
+  - {fileID: 489649308}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
