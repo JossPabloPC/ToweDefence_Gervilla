@@ -13,7 +13,7 @@ public class TowerData : ScriptableObject
     public float        range;
     public Mesh         mesh;
     public Material     material;
-    public Type         anti;
+    public Type         gunType;
 }
 
 

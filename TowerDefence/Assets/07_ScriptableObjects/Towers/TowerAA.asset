@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e69e3a8e311f74d924e7b2f01f19e9, type: 3}
+  m_Name: TowerAA
+  m_EditorClassIdentifier: 
+  cost: 5
+  rateOfFire: 5
+  rotationSpeed: 1
+  projectile: {fileID: 100008, guid: 7b142295c8a5d8a4486a67f84893ed08, type: 3}
+  range: 5
+  mesh: {fileID: 7104208674457473473, guid: b08f75bae0fc512468e9509bc73b8db5, type: 3}
+  material: {fileID: 2100000, guid: cc0c6c80bfb88c34693f44b07543b420, type: 2}
+  gunType: 3

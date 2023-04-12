@@ -42,14 +42,13 @@ public class Tower_BH : ObjectWithGun
             _targetDirection = _enemiesOnTarget[0].transform.position - transform.position;
             _angle = Vector3.Angle(_targetDirection, transform.forward);
             int sign = Vector3.Cross(transform.forward, _targetDirection).y < 0 ? -1 : 1;
-            Debug.Log(sign + " " + _angle);
             if (_angle > 5)
             {
                 transform.Rotate(0, 10 * sign * Time.deltaTime * data.rotationSpeed, 0);
             }
             if(_angle < 20)
             {
-                Fire(_canonEnd);
+                Fire(_canonEnd, data.gunType);
             }
         }
 

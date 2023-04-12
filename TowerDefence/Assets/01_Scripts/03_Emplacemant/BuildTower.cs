@@ -21,7 +21,7 @@ public class BuildTower : MonoBehaviour
         if (!_towerUsed && _gameData.towerSelected != null)
         {
             _towerUsed  = true;
-            TowerPooler.Instance.SpawnTower(transform.position + Vector3.up * 0.66f, Quaternion.identity, data);
+            TowerPooler.Instance.SpawnTower(transform.position + Vector3.up * 0.15f, Quaternion.identity, data);
             Scr_GameManager.Instance.Towerbought(_gameData.towerSelected.cost);
             Scr_GameManager.Instance.DeactivateHologram();
         }

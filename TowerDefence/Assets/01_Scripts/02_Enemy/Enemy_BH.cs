@@ -15,7 +15,7 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
 
     protected virtual void OnEnable()
     {
-        _currentHealth = _enemyData._health;        
+        _currentHealth = _enemyData.health;        
     }
 
     private void OnDisable()
@@ -68,6 +68,10 @@ public class Enemy_BH : Damagable_Body, MoveToTarget_IE
         receiveDamage((int)_currentHealth);
     }
 
+    public override Type GetUnitType()
+    {
+        return _enemyData.type;
+    }
     private void OnTriggerEnter(Collider other)
     {
         Bullet_BH tmp = other.GetComponent<Bullet_BH>();

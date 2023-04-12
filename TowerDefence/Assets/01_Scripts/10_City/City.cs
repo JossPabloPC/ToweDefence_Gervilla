@@ -9,7 +9,7 @@ public class City : Damagable_Body
 
     private void OnEnable()
     {
-        _currentHealth = _objectData._health;
+        _currentHealth = _objectData.health;
     }
     protected override void killObject()
     {

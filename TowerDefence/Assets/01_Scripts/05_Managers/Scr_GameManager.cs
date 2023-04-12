@@ -36,8 +36,9 @@ public class Scr_GameManager : MonoBehaviour
     }
     void Start()
     {
-        _city.OnDeath += CityDestroyed;
-        _waveManager.OnWavesEnded += WavesCleared;
+        _city       .OnDeath        += CityDestroyed;
+        _waveManager.OnWavesEnded   += WavesCleared;
+
         Cursor.visible = true;
         setGameData();
     }
@@ -66,9 +67,11 @@ public class Scr_GameManager : MonoBehaviour
 
     private void setGameData()
     {
-        credits                     = _gameData.startingCredits;
+        DamageTable.CreateDamageMap();
+
+        credits = _gameData.startingCredits;
         creditsText.text            = credits.ToString();
-        _gameData.towerSelected    = null;
+        _gameData.towerSelected     = null;
     }
 
     private void CityDestroyed()

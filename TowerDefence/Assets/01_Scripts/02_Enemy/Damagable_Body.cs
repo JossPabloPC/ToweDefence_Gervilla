@@ -12,18 +12,17 @@ public class Damagable_Body : MonoBehaviour
     protected   float       _currentHealth;
     public      AliveObject _objectData;
 
-
     public float CurrentHealthNormalized
     {
-        get { return (float)_currentHealth/_objectData._health; }
+        get { return (float)_currentHealth/_objectData.health; }
     }
-    public virtual void receiveDamage(int damage)
+    public virtual void receiveDamage(float damage)
     {
         MusicManager.Instance.PlaySound("Hurt");
         StartCoroutine(reduceHealth(damage));
     }
 
-    IEnumerator reduceHealth(int damage)
+    IEnumerator reduceHealth(float damage)
     {
         float objetivo = _currentHealth - damage;
         do
@@ -42,5 +41,10 @@ public class Damagable_Body : MonoBehaviour
     protected virtual void killObject()
     {
         gameObject.SetActive(false);
+    }
+
+    public virtual Type GetUnitType()
+    {
+        return _objectData.type;
     }
 }

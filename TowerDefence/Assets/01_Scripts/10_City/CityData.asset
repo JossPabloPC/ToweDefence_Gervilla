@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7895176bdb854b641892bcb0c19a6747, type: 3}
   m_Name: CityData
   m_EditorClassIdentifier: 
-  _health: 4
+  health: 10
+  type: 0

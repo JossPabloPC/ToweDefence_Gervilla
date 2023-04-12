@@ -5,5 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AliveObject", menuName = "ScriptableObjects/Alive Object", order = 1)]
 public class AliveObject : ScriptableObject
 {
-    public int _health;
+    public int     health;
+    public Type    type;
+
+
 }
